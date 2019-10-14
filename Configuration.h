@@ -932,16 +932,14 @@
  * By default the firmware assumes HIGH=FILAMENT PRESENT.
  */
 
-//Remarks: not activated in the stock firmware, why???
-//TODO: TBC before use, not working for the moment !!!
-//#define FILAMENT_RUNOUT_SENSOR
+#define FILAMENT_RUNOUT_SENSOR
 #if ENABLED(FILAMENT_RUNOUT_SENSOR)
   #define NUM_RUNOUT_SENSORS   1     // Number of sensors, up to one per extruder. Define a FIL_RUNOUT#_PIN for each.
   #define FIL_RUNOUT_INVERTING false // set to true to invert the logic of the sensor.
-  //TODO CR10s template true
   #define FIL_RUNOUT_PULLUP          // Use internal pullup for filament runout pins.
   #define FILAMENT_RUNOUT_SCRIPT "M600"
-  #define FIL_RUNOUT_PIN 2 // Creality CR10-S stock sensor
+  #define FIL_RUNOUT_PIN    2   //otherwise defined in pin_RAMP.h default value==4
+  #define X_MAX_PIN         -1  //otherwise defined in pin_RAMP.h default value==2 //needed for the sensor //Thanks to Daniel Re
 #endif
 
 //===========================================================================
